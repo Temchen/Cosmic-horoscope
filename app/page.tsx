@@ -1,8 +1,7 @@
-// app/page.tsx
 "use client";
 import { useRouter } from "next/navigation";
-import { useAuth } from "./context/AuthContext";
-import Header from "./components/Header";
+import { useAuth } from "@/app/context/AuthContext";
+import Header from "@/app/components/Header";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -11,10 +10,9 @@ export default function Home() {
 
   const handleStart = () => {
     if (user) {
-      router.push("/prepare"); // Если вошел, идем на предупреждение
+      router.push("/prepare");
     } else {
       alert("Пожалуйста, зарегистрируйтесь или войдите, чтобы получить астральный план.");
-      // Здесь можно программно открыть модалку, но для простоты используем alert
     }
   };
 
